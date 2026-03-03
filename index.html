@@ -10,33 +10,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    background-color: #0d0d0d;
-    color: white;
+    background: #0a0f1c;
+    color: #ffffff;
     line-height: 1.6;
 }
 
 header {
-    background: black;
+    background: #060b16;
     padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #00c3ff;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: red;
+    color: #00c3ff;
     letter-spacing: 2px;
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     margin-left: 25px;
     font-weight: bold;
@@ -44,13 +44,13 @@ nav a {
 }
 
 nav a:hover {
-    color: red;
+    color: #00c3ff;
 }
 
 .hero {
     height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1600') center/cover no-repeat;
+    background: linear-gradient(rgba(6,11,22,0.85), rgba(6,11,22,0.9)),
+                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,17 +64,18 @@ nav a:hover {
 }
 
 .hero span {
-    color: red;
+    color: #00c3ff;
 }
 
 .hero p {
     font-size: 20px;
     margin-bottom: 30px;
+    color: #cfd8ff;
 }
 
 .btn {
-    background: red;
-    color: white;
+    background: #00c3ff;
+    color: #060b16;
     padding: 15px 30px;
     text-decoration: none;
     font-weight: bold;
@@ -83,8 +84,8 @@ nav a:hover {
 }
 
 .btn:hover {
-    background: white;
-    color: red;
+    background: #ffffff;
+    color: #00c3ff;
 }
 
 section {
@@ -95,7 +96,7 @@ section {
     text-align: center;
     font-size: 36px;
     margin-bottom: 50px;
-    color: red;
+    color: #00c3ff;
 }
 
 .services {
@@ -105,27 +106,28 @@ section {
 }
 
 .card {
-    background: #1a1a1a;
+    background: #111827;
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid #333;
+    border: 1px solid #1f2937;
     transition: 0.3s;
 }
 
 .card:hover {
-    border-color: red;
+    border-color: #00c3ff;
     transform: translateY(-5px);
 }
 
 .card h3 {
     margin-bottom: 15px;
-    color: red;
+    color: #00c3ff;
 }
 
 .about {
     text-align: center;
     max-width: 800px;
     margin: auto;
+    color: #dbeafe;
 }
 
 .contact {
@@ -138,11 +140,12 @@ section {
 }
 
 footer {
-    background: black;
+    background: #060b16;
     text-align: center;
     padding: 20px;
-    border-top: 2px solid red;
+    border-top: 2px solid #00c3ff;
     margin-top: 50px;
+    color: #9ca3af;
 }
 </style>
 
@@ -160,8 +163,8 @@ footer {
 
 <section class="hero">
     <div>
-        <h1>Precision <span>ADAS Calibration</span> You Can Trust</h1>
-        <p>Advanced Driver Assistance System Calibration for Safety, Accuracy & Performance</p>
+        <h1>Advanced <span>ADAS Calibration</span> Precision</h1>
+        <p>High-Tech Calibration Solutions for Modern Driver Assistance Systems</p>
         <a href="#contact" class="btn">Schedule Service</a>
     </div>
 </section>
@@ -171,19 +174,19 @@ footer {
     <div class="services">
         <div class="card">
             <h3>Static Calibration</h3>
-            <p>OEM-level calibration using precision targeting systems to restore vehicle safety features.</p>
+            <p>Factory-level targeting systems to restore vehicle safety features to OEM standards.</p>
         </div>
         <div class="card">
             <h3>Dynamic Calibration</h3>
-            <p>On-road recalibration ensuring cameras and radar systems perform with factory accuracy.</p>
+            <p>Precision road-based recalibration ensuring camera and radar accuracy.</p>
         </div>
         <div class="card">
-            <h3>Pre & Post Scan</h3>
-            <p>Complete vehicle diagnostics to identify, document, and clear system faults.</p>
+            <h3>Diagnostic Scanning</h3>
+            <p>Complete system scans before and after service for full transparency.</p>
         </div>
         <div class="card">
-            <h3>Collision Repair Support</h3>
-            <p>Partnering with body shops to ensure vehicles leave safe, compliant, and road-ready.</p>
+            <h3>Collision Shop Support</h3>
+            <p>Professional calibration support for body shops and repair facilities.</p>
         </div>
     </div>
 </section>
@@ -192,13 +195,12 @@ footer {
     <h2 class="section-title">About Carspiration</h2>
     <div class="about">
         <p>
-            Carspiration ADAS Calibration delivers professional, accurate, and safety-focused calibration services.
-            We specialize in restoring advanced driver assistance systems after windshield replacement,
-            suspension work, or collision repair.
+            Carspiration ADAS Calibration specializes in restoring advanced driver assistance systems 
+            after windshield replacement, suspension adjustments, or collision repairs.
         </p>
         <br>
         <p>
-            Our mission is simple: Precision. Safety. Excellence.
+            We combine cutting-edge technology with precision execution to keep drivers safe.
         </p>
     </div>
 </section>
