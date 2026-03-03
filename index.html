@@ -6,96 +6,159 @@
 <title>Carspiration ADAS Calibration</title>
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0f172a;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0a0f1c;
     color: white;
 }
 
-header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    padding: 100px 20px;
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(10,15,28,0.85), rgba(10,15,28,0.95)),
+    url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
-header h1 {
-    font-size: 55px;
+.hero h1 {
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
-header span {
+.hero span {
     color: #00e0ff;
+    text-shadow: 0 0 15px #00e0ff;
 }
 
-header p {
-    font-size: 20px;
+.hero p {
+    font-size: 22px;
     max-width: 700px;
-    margin: auto;
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 30px;
+    padding: 15px 35px;
     background: #00e0ff;
-    color: #0f172a;
-    text-decoration: none;
+    color: #0a0f1c;
     font-weight: bold;
+    text-decoration: none;
     border-radius: 8px;
+    transition: 0.3s ease;
 }
 
-section {
-    padding: 80px 20px;
-    text-align: center;
+.btn:hover {
+    background: #00bcd4;
 }
 
+/* SERVICES */
 .services {
-    background: #1e293b;
+    padding: 80px 20px;
+    background: #111827;
+    text-align: center;
 }
 
 .services h2 {
     font-size: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-.service-box {
-    max-width: 800px;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
     margin: auto;
-    font-size: 18px;
-    line-height: 1.8;
 }
 
+.service-card {
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,224,255,0.3);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: #00e0ff;
+}
+
+/* CONTACT */
 .contact {
-    background: #0f172a;
+    padding: 80px 20px;
+    text-align: center;
 }
 
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* FOOTER */
 footer {
-    background: #111827;
+    background: #0f172a;
     padding: 20px;
     text-align: center;
     font-size: 14px;
+    opacity: 0.7;
+}
+
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 40px;
+    }
 }
 </style>
-
 </head>
 <body>
 
-<header>
+<section class="hero">
     <h1>Carspiration <span>ADAS Calibration</span></h1>
-    <p>Precision Calibration for Cameras, Radar, and Safety Systems. 
-    Protecting Drivers Through Advanced Technology.</p>
+    <p>Advanced Driver Assistance System Calibration for Modern Vehicles. 
+    Precision. Accuracy. Safety.</p>
     <a href="#contact" class="btn">Schedule Service</a>
-</header>
+</section>
 
 <section class="services">
     <h2>Our Services</h2>
-    <div class="service-box">
-        <p>✔ Forward Collision Camera Calibration</p>
-        <p>✔ Lane Departure & Lane Keep Assist Calibration</p>
-        <p>✔ Blind Spot Radar Calibration</p>
-        <p>✔ Adaptive Cruise Control Systems</p>
-        <p>✔ Post-Collision ADAS Recalibration</p>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Camera Calibration</h3>
+            <p>Forward collision, lane departure, and traffic sign recognition systems.</p>
+        </div>
+        <div class="service-card">
+            <h3>Radar Calibration</h3>
+            <p>Blind spot monitoring and adaptive cruise control recalibration.</p>
+        </div>
+        <div class="service-card">
+            <h3>Post-Collision Reset</h3>
+            <p>Full system recalibration after windshield replacement or accidents.</p>
+        </div>
+        <div class="service-card">
+            <h3>Diagnostic Scanning</h3>
+            <p>Complete ADAS module diagnostics and system verification.</p>
+        </div>
     </div>
 </section>
 
@@ -103,11 +166,11 @@ footer {
     <h2>Contact Us</h2>
     <p>Email: info@carspirationadas.com</p>
     <p>Phone: (000) 000-0000</p>
-    <p>Location: National City, CA</p>
+    <p>National City, CA</p>
 </section>
 
 <footer>
-    © 2026 Carspiration ADAS Calibration | Safety. Precision. Excellence.
+    © 2026 Carspiration ADAS Calibration | Safety Meets Precision
 </footer>
 
 </body>
