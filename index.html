@@ -6,250 +6,109 @@
 <title>Carspiration ADAS Calibration</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    scroll-behavior: smooth;
-}
-
 body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
     background: #0f172a;
     color: white;
-    line-height: 1.6;
 }
 
-/* Scroll Progress Bar */
-#progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: #00e0ff;
-    width: 0%;
-    z-index: 9999;
-}
-
-/* Header */
 header {
-    background: rgba(15,23,42,0.95);
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #00e0ff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00e0ff;
-    text-shadow: 0 0 10px #00e0ff;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #00e0ff;
-}
-
-/* Hero with Video */
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    padding: 100px 20px;
     text-align: center;
 }
 
-.hero video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(10,15,28,0.75);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h1 {
+header h1 {
     font-size: 55px;
     margin-bottom: 20px;
 }
 
-.hero span {
+header span {
     color: #00e0ff;
-    text-shadow: 0 0 15px #00e0ff;
 }
 
-.hero p {
-    font-size: 22px;
-    margin-bottom: 30px;
-    color: #e0f7ff;
+header p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: auto;
 }
 
 .btn {
-    background: #00e0ff;
-    color: #0f172a;
+    display: inline-block;
+    margin-top: 30px;
     padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 0 15px #00e0ff;
-}
-
-/* Sections */
-section {
-    padding: 100px 10%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 50px;
-    color: #00e0ff;
-}
-
-/* Services */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #334155;
-}
-
-.card:hover {
-    border-color: #00e0ff;
-    box-shadow: 0 0 15px rgba(0,224,255,0.4);
-}
-
-/* Floating Button */
-.floating-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
     background: #00e0ff;
     color: #0f172a;
-    padding: 15px 20px;
-    border-radius: 50px;
-    font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 0 15px #00e0ff;
-    z-index: 1000;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services {
+    background: #1e293b;
+}
+
+.services h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.service-box {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.contact {
+    background: #0f172a;
 }
 
 footer {
-    text-align: center;
+    background: #111827;
     padding: 20px;
-    border-top: 1px solid #00e0ff;
+    text-align: center;
+    font-size: 14px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<div id="progressBar"></div>
-
 <header>
-    <div class="logo">CARSPIRATION ADAS</div>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <h1>Carspiration <span>ADAS Calibration</span></h1>
+    <p>Precision Calibration for Cameras, Radar, and Safety Systems. 
+    Protecting Drivers Through Advanced Technology.</p>
+    <a href="#contact" class="btn">Schedule Service</a>
 </header>
 
-<section class="hero">
-    <video autoplay muted loop>
-        <source src="https://cdn.coverr.co/videos/coverr-driving-at-night-4457/1080p.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Advanced <span>ADAS Calibration</span></h1>
-        <p>Precision Technology for Modern Vehicle Safety Systems</p>
-        <a href="#contact" class="btn">Schedule Service</a>
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="service-box">
+        <p>✔ Forward Collision Camera Calibration</p>
+        <p>✔ Lane Departure & Lane Keep Assist Calibration</p>
+        <p>✔ Blind Spot Radar Calibration</p>
+        <p>✔ Adaptive Cruise Control Systems</p>
+        <p>✔ Post-Collision ADAS Recalibration</p>
     </div>
 </section>
 
-<section id="services">
-    <h2 class="section-title">Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Static Calibration</h3>
-            <p>OEM-level targeting systems restoring full safety functionality.</p>
-        </div>
-        <div class="card">
-            <h3>Dynamic Calibration</h3>
-            <p>On-road recalibration ensuring radar and camera precision.</p>
-        </div>
-        <div class="card">
-            <h3>Diagnostics</h3>
-            <p>Comprehensive scanning before and after calibration.</p>
-        </div>
-        <div class="card">
-            <h3>Collision Shop Support</h3>
-            <p>Professional ADAS support for repair facilities.</p>
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <h2 class="section-title">About Carspiration</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        Carspiration ADAS Calibration specializes in restoring advanced driver assistance systems
-        with cutting-edge tools and precision-driven expertise.
-    </p>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <p style="text-align:center;">
-        📍 Southern California<br>
-        📞 (555) 123-4567<br>
-        📧 info@carspirationadas.com
-    </p>
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@carspirationadas.com</p>
+    <p>Phone: (000) 000-0000</p>
+    <p>Location: National City, CA</p>
 </section>
 
 <footer>
-    © 2026 Carspiration ADAS Calibration. All Rights Reserved.
+    © 2026 Carspiration ADAS Calibration | Safety. Precision. Excellence.
 </footer>
-
-<a href="#contact" class="floating-btn">Book Now</a>
-
-<script>
-window.onscroll = function() {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("progressBar").style.width = scrolled + "%";
-};
-</script>
 
 </body>
 </html>
