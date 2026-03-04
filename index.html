@@ -6,334 +6,223 @@
 <title>Carspiration ADAS Calibration</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#0b1220;color:white;}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  scroll-behavior: smooth;
+}
 
 /* NAVIGATION */
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(11,18,32,0.95);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-z-index:1000;
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.85);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#00e0ff;
-animation:glow 2s infinite alternate;
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5c542;
+  letter-spacing: 2px;
 }
 
-@keyframes glow{
-from{text-shadow:0 0 6px #00e0ff;}
-to{text-shadow:0 0 22px #00e0ff;}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
-
-nav a:hover{color:#00e0ff;}
-
-.menu-toggle{
-display:none;
-font-size:28px;
-cursor:pointer;
+nav ul li a:hover {
+  color: #f5c542;
 }
 
 /* HERO */
-.hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),
-url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600') center/cover no-repeat;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+.hero {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2000");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero h1{
-font-size:60px;
-margin-bottom:20px;
-text-shadow:0 0 25px rgba(0,224,255,0.6);
+.hero-overlay {
+  background: rgba(0,0,0,0.65);
+  padding: 60px 20px;
+  width: 100%;
 }
 
-.hero span{color:#00e0ff;}
-
-.hero p{
-font-size:22px;
-max-width:700px;
-margin-bottom:30px;
+.hero h1 {
+  font-size: 50px;
+  letter-spacing: 3px;
 }
 
-.btn{
-padding:15px 35px;
-background:#00e0ff;
-color:#0b1220;
-font-weight:bold;
-text-decoration:none;
-border-radius:8px;
-box-shadow:0 0 20px rgba(0,224,255,0.5);
-border:none;
-cursor:pointer;
-transition:0.3s;
+.hero p {
+  font-size: 20px;
+  margin: 20px 0;
 }
 
-.btn:hover{
-background:#00bcd4;
+.btn {
+  padding: 14px 32px;
+  background: #f5c542;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 /* SECTIONS */
-section{
-padding:100px 20px;
-text-align:center;
+section {
+  padding: 100px 20px;
+  text-align: center;
 }
 
-.dark{background:#111827;}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1100px;
-margin:auto;
-}
-
-/* CARDS */
-.card{
-background:#1f2937;
-padding:30px;
-border-radius:12px;
-opacity:0;
-transform:translateY(40px);
-transition:0.8s ease;
-}
-
-.card.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-.card h3{
-color:#00e0ff;
-margin-bottom:15px;
-}
-
-/* TESTIMONIALS */
-.testimonial{
-max-width:700px;
-margin:auto;
-font-style:italic;
-font-size:18px;
-line-height:1.6;
-}
-
-/* FORM */
-form{
-max-width:600px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,textarea{
-padding:12px;
-border-radius:8px;
-border:none;
-}
-
-textarea{
-resize:none;
-height:120px;
-}
-
-/* MAP */
-iframe{
-width:100%;
-height:350px;
-border:none;
-border-radius:12px;
-}
-
-/* FOOTER */
-footer{
-background:#0f172a;
-padding:20px;
-text-align:center;
-font-size:14px;
-opacity:0.7;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-nav ul{
-display:none;
-flex-direction:column;
-background:#0b1220;
-position:absolute;
-top:60px;
-right:0;
-width:200px;
-padding:20px;
-}
-nav ul.show{display:flex;}
-.menu-toggle{display:block;}
-.hero h1{font-size:40px;}
-}
-</style>
-  
-}
-  .luxury-title {
-  font-size: 38px;
-  letter-spacing: 2px;
+h2 {
   color: #f5c542;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-}
-  .luxury-text {
-  max-width: 850px;
-  margin: 0 auto 40px auto;
-  font-size: 19px;
-  line-height: 1.9;
-  font-weight: 300;
-  color: #e5e5e5;
+  margin-bottom: 30px;
+  font-size: 32px;
 }
 
-.gold-divider {
+p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* PRICING */
+.pricing-box {
+  background: #1c1c1c;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+/* MISSION */
+#mission {
+  background: linear-gradient(to right, #141414, #1c1c1c);
+}
+
+.divider {
   width: 100px;
   height: 2px;
-  margin: 40px auto;
   background: linear-gradient(90deg, transparent, #f5c542, transparent);
-  animation: glow 3s infinite alternate;
+  margin: 40px auto;
 }
 
-@keyframes glow {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-      <div class="gold-divider"></div>
-     }
-<
+/* CONTACT */
+.contact-info {
+  margin-top: 20px;
+  line-height: 2;
+}
+
+footer {
+  padding: 30px;
+  background: black;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
 <nav>
-<div class="logo">Carspiration</div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<ul id="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#pricing">Pricing</a></li>
-<li><a href="#contact">Book</a></li>
-</ul>
+  <div class="logo">CARSPIRATION</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<h1>Advanced <span>ADAS Calibration</span></h1>
-<p>Precision Alignment for Cameras, Radar & Modern Vehicle Safety Systems.</p>
-<a href="#contact" class="btn">Schedule Service</a>
-</section>
-
-<section id="services" class="dark">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="card"><h3>Camera Calibration</h3><p>Lane & forward collision alignment.</p></div>
-<div class="card"><h3>Radar Calibration</h3><p>Blind spot & adaptive cruise systems.</p></div>
-<div class="card"><h3>Post-Collision Reset</h3><p>Complete ADAS recalibration after impact.</p></div>
-<div class="card"><h3>Diagnostics</h3><p>Full system verification and scanning.</p></div>
-</div>
-</section>
-
-<section id="pricing">
-<h2>Pricing</h2>
-<div class="grid">
-<div class="card"><h3>Single System</h3><p>$250+</p></div>
-<div class="card"><h3>Full Calibration</h3><p>$450+</p></div>
-<div class="card"><h3>Diagnostic Scan</h3><p>$120</p></div>
-</div>
-</section>
-<section id="mission" class="fade-in">
-  <div class="container">
-    <h2>Our Mission</h2>
-    <p>
-      At Carspiration ADAS Calibration, our mission is to deliver precision,
-      safety, and excellence in every vehicle we service. We are committed to
-      restoring advanced driver assistance systems to manufacturer standards,
-      ensuring every customer drives away with confidence and peace of mind.
-    </p>
-
-    <div class="divider"></div>
-
-    <h2>Our Vision</h2>
-    <p>
-      Our vision is to become the trusted leader in ADAS calibration across
-      Southern California, known for integrity, innovation, and uncompromising
-      quality. We aim to set the benchmark for safety and service in the
-      automotive industry.
-    </p>
-  </div>
-</section>
-<section class="dark">
-<h2>Testimonials</h2>
-<div class="testimonial">
-“Professional, accurate, and fast. Carspiration restored our vehicle safety system perfectly.”
-</div>
-</section>
-
-<section id="contact">
-<h2>Book Your Calibration</h2>
-<form action="https://formspree.io/f/yourformid" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="text" name="vehicle" placeholder="Vehicle Make & Model" required>
-<textarea name="message" placeholder="Describe the service needed"></textarea>
-<button type="submit" class="btn">Submit Request</button>
-</form>
-</section>
-
-<section class="dark">
-<h2>Our Location</h2>
-<iframe src="https://www.google.com/maps?q=National%20City,%20CA&output=embed"></iframe>
-</section>
-
-<footer>
-© 2026 Carspiration ADAS Calibration | Safety Meets Precision
-</footer>
-
-<script>
-const cards=document.querySelectorAll('.card');
-window.addEventListener('scroll',()=>{
-cards.forEach(card=>{
-if(card.getBoundingClientRect().top<window.innerHeight/1.2){
-card.classList.add('visible');
-}
-});
-});
-
-function toggleMenu(){
-document.getElementById("nav-links").classList.toggle("show");
-}
-</script>
-
-</body>
-  <header class="hero">
+<header class="hero">
   <div class="hero-overlay">
-    <h1>Carspiration ADAS Calibration</h1>
+    <h1>ADAS Calibration Experts</h1>
     <p>Precision. Safety. Excellence.</p>
     <a href="#pricing" class="btn">View Services</a>
   </div>
 </header>
-</html>
-  </body>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Carspiration ADAS Calibration specializes in restoring advanced driver
+    assistance systems to manufacturer standards. We provide accurate,
+    professional calibrations that ensure your vehicle's safety systems
+    operate exactly as designed.
+  </p>
+</section>
+
+<section id="pricing">
+  <h2>Pricing</h2>
+
+  <div class="pricing-box">
+    <h3>Camera Calibration</h3>
+    <p>$250 - $400</p>
+  </div>
+
+  <div class="pricing-box">
+    <h3>Radar Calibration</h3>
+    <p>$300 - $500</p>
+  </div>
+
+  <div class="pricing-box">
+    <h3>Full ADAS Package</h3>
+    <p>$600 - $900</p>
+  </div>
+</section>
+
+<section id="mission">
+  <h2>Our Mission</h2>
+  <p>
+    At Carspiration ADAS Calibration, we exist to protect lives through
+    precision engineering. Every calibration we perform is executed to
+    manufacturer standards, restoring advanced safety systems with
+    uncompromising accuracy and excellence.
+  </p>
+
+  <div class="divider"></div>
+
+  <h2>Our Vision</h2>
+  <p>
+    Our vision is to lead the future of automotive safety across Southern
+    California — becoming the trusted authority in ADAS calibration,
+    known for integrity, innovation, and elite service standards.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <p>Email: info@carspirationadas.com</p>
+    <p>Phone: (000) 000-0000</p>
+    <p>National City, California</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Carspiration ADAS Calibration. All Rights Reserved.
+</footer>
+
+</body>
 </html>
