@@ -19,8 +19,10 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
+  box-sizing: border-box;
   background: rgba(0,0,0,0.9);
-  padding: 15px 40px;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +45,9 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
@@ -164,10 +168,15 @@ p {
 }
 
 footer {
+ footer {
   background: black;
   padding: 30px;
   text-align: center;
   color: #888;
+}
+
+nav ul li {
+  white-space: nowrap;
 }
 </style>
 </head>
