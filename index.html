@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0d0d0d;
+ background: linear-gradient(to bottom, #1a1a1a, #2b2b2b);
   color: white;
   scroll-behavior: smooth;
 }
@@ -30,11 +30,19 @@ nav {
 }
 
 .logo {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
-  color: #d4af37;
-  letter-spacing: 2px;
-  animation: glow 2s infinite alternate;
+  letter-spacing: 3px;
+}
+
+.logo .car {
+  color: #f5c542;
+  text-shadow: 0 0 10px rgba(245, 197, 66, 0.8);
+}
+
+.logo .spiration {
+  color: white;
+  margin-left: 4px;
 }
 
 @keyframes glow {
@@ -74,7 +82,8 @@ nav ul li a:hover {
 }
 
 .hero-overlay {
-  background: rgba(0,0,0,0.7);
+  .hero-overlay {
+  background: rgba(0,0,0,0.55);
   padding: 80px 20px;
   width: 100%;
 }
@@ -87,7 +96,7 @@ nav ul li a:hover {
 .slogan {
   font-size: 24px;
   margin: 20px 0;
-  color: #d4af37;
+  #f5c542
 }
 
 .experience {
@@ -178,13 +187,24 @@ footer {
 nav ul li {
   white-space: nowrap;
 }
+
+@keyframes shine {
+  from { text-shadow: 0 0 8px rgba(245,197,66,0.5); }
+  to { text-shadow: 0 0 18px rgba(245,197,66,1); }
+}
+
+.logo .car {
+  animation: shine 2s infinite alternate;
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="logo">CARSPIRATION</div>
+ <div class="logo">
+  <span class="car">CAR</span><span class="spiration">SPIRATION</span>
+</div>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#pricing">Pricing</a></li>
