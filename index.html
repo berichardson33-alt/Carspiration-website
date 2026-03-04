@@ -8,11 +8,10 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d;
   color: white;
   scroll-behavior: smooth;
-  padding-top: 70px;
 }
 
 /* NAVIGATION */
@@ -20,7 +19,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
@@ -31,14 +30,20 @@ nav {
 .logo {
   font-size: 22px;
   font-weight: bold;
-  color: #f5c542;
+  color: #d4af37;
   letter-spacing: 2px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #d4af37; }
+  to { text-shadow: 0 0 20px #d4af37; }
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 nav ul li a {
@@ -48,7 +53,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #f5c542;
+  color: #d4af37;
 }
 
 /* HERO */
@@ -61,27 +66,35 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 70px;
 }
 
 .hero-overlay {
-  background: rgba(0,0,0,0.65);
-  padding: 60px 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 80px 20px;
   width: 100%;
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 56px;
   letter-spacing: 3px;
 }
 
-.hero p {
-  font-size: 20px;
+.slogan {
+  font-size: 24px;
   margin: 20px 0;
+  color: #d4af37;
+}
+
+.experience {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
 
 .btn {
-  padding: 14px 32px;
-  background: #f5c542;
+  padding: 14px 36px;
+  background: #d4af37;
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -95,55 +108,66 @@ section {
 }
 
 h2 {
-  color: #f5c542;
+  color: #d4af37;
+  font-size: 36px;
   margin-bottom: 30px;
-  font-size: 32px;
 }
 
 p {
   max-width: 800px;
   margin: auto;
   line-height: 1.8;
+  font-size: 18px;
 }
 
 /* PRICING */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 .pricing-box {
-  background: #1c1c1c;
-  padding: 30px;
-  margin: 20px auto;
-  max-width: 400px;
-  border-radius: 6px;
+  background: #1a1a1a;
+  padding: 40px;
+  width: 280px;
   border: 1px solid #333;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.pricing-box:hover {
+  transform: translateY(-10px);
+  border-color: #d4af37;
+}
+
+.pricing-box h3 {
+  color: #d4af37;
 }
 
 /* MISSION */
 #mission {
-  background: linear-gradient(to right, #141414, #1c1c1c);
+  background: linear-gradient(to right, #111, #1c1c1c);
 }
 
 .divider {
-  width: 100px;
+  width: 120px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #f5c542, transparent);
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
   margin: 40px auto;
 }
 
 /* CONTACT */
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-info">
-    <p>Email: info@carspirationadas.com</p>
-    <p>Phone: (000) 000-0000</p>
-    <p>National City, California</p>
-  </div>
-</section>
+.contact-info p {
+  margin: 10px 0;
+}
 
 footer {
-  padding: 30px;
   background: black;
+  padding: 30px;
   text-align: center;
-  font-size: 14px;
-  color: #aaa;
+  color: #888;
 }
 </style>
 </head>
@@ -163,7 +187,8 @@ footer {
 <header class="hero">
   <div class="hero-overlay">
     <h1>ADAS Calibration Experts</h1>
-    <p>Precision. Safety. Excellence.</p>
+    <div class="slogan">Where Precision Meets Vision</div>
+    <div class="experience">30 Years Experience | 100% Customer Satisfaction</div>
     <a href="#pricing" class="btn">View Services</a>
   </div>
 </header>
@@ -171,48 +196,44 @@ footer {
 <section id="about">
   <h2>About Us</h2>
   <p>
-    Carspiration ADAS Calibration specializes in restoring advanced driver
-    assistance systems to manufacturer standards. We provide accurate,
-    professional calibrations that ensure your vehicle's safety systems
-    operate exactly as designed.
+    Carspiration ADAS Calibration specializes in restoring advanced driver assistance
+    systems to manufacturer standards. We ensure every vehicle leaves our facility
+    calibrated with accuracy, integrity, and elite professional care.
   </p>
 </section>
 
 <section id="pricing">
-  <h2>Pricing</h2>
-
-  <div class="pricing-box">
-    <h3>Camera Calibration</h3>
-    <p>$250 - $400</p>
-  </div>
-
-  <div class="pricing-box">
-    <h3>Radar Calibration</h3>
-    <p>$300 - $500</p>
-  </div>
-
-  <div class="pricing-box">
-    <h3>Full ADAS Package</h3>
-    <p>$600 - $900</p>
+  <h2>Our Services</h2>
+  <div class="pricing-container">
+    <div class="pricing-box">
+      <h3>Camera Calibration</h3>
+      <p>$250 - $400</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Radar Calibration</h3>
+      <p>$300 - $500</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Full ADAS Package</h3>
+      <p>$600 - $900</p>
+    </div>
   </div>
 </section>
 
 <section id="mission">
   <h2>Our Mission</h2>
   <p>
-    At Carspiration ADAS Calibration, we exist to protect lives through
-    precision engineering. Every calibration we perform is executed to
-    manufacturer standards, restoring advanced safety systems with
-    uncompromising accuracy and excellence.
+    We protect lives through precision engineering. Every calibration is executed
+    to manufacturer standards, restoring safety systems with uncompromising accuracy.
   </p>
 
   <div class="divider"></div>
 
   <h2>Our Vision</h2>
   <p>
-    Our vision is to lead the future of automotive safety across Southern
-    California — becoming the trusted authority in ADAS calibration,
-    known for integrity, innovation, and elite service standards.
+    To lead the future of automotive safety in Southern California, becoming
+    the trusted authority in ADAS calibration known for innovation,
+    integrity, and elite service.
   </p>
 </section>
 
