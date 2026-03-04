@@ -6,229 +6,174 @@
 <title>Carspiration ADAS Calibration</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0f1c;color:white;}
+
+/* NAV */
+nav{
+position:fixed;width:100%;top:0;
+background:rgba(10,15,28,0.9);
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px;z-index:1000;
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #0a0f1c;
-    color: white;
+.logo{
+font-size:22px;font-weight:bold;
+color:#00e0ff;
+animation:glow 2s infinite alternate;
 }
 
-/* NAVIGATION */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(10,15,28,0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    z-index: 1000;
+@keyframes glow{
+from{text-shadow:0 0 10px #00e0ff;}
+to{text-shadow:0 0 25px #00e0ff;}
 }
 
-nav h2 {
-    color: #00e0ff;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #00e0ff;
-}
+nav ul{display:flex;list-style:none;gap:25px;}
+nav a{text-decoration:none;color:white;}
+nav a:hover{color:#00e0ff;}
 
 /* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
-    url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45)),
+url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600') center/cover no-repeat;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;padding:20px;
 }
 
-.hero h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 25px rgba(0,224,255,0.6);
-}
+.hero h1{font-size:60px;margin-bottom:20px;text-shadow:0 0 20px rgba(0,224,255,0.6);}
+.hero span{color:#00e0ff;}
+.hero p{font-size:22px;margin-bottom:30px;max-width:700px;}
 
-.hero span {
-    color: #00e0ff;
-}
-
-.hero p {
-    font-size: 22px;
-    max-width: 700px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    padding: 15px 35px;
-    background: #00e0ff;
-    color: #0a0f1c;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,224,255,0.5);
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background: #00bcd4;
+.btn{
+padding:15px 35px;background:#00e0ff;color:#0a0f1c;
+font-weight:bold;text-decoration:none;border-radius:8px;
+box-shadow:0 0 20px rgba(0,224,255,0.6);
+border:none;cursor:pointer;
 }
 
 /* SECTIONS */
-section {
-    padding: 100px 20px;
-    text-align: center;
+section{padding:100px 20px;text-align:center;}
+.dark{background:#111827;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;max-width:1100px;margin:auto;
 }
 
-.services {
-    background: #111827;
+.card{
+background:#1f2937;padding:30px;border-radius:12px;
+opacity:0;transform:translateY(40px);
+transition:0.8s ease;
+}
+.card.visible{opacity:1;transform:translateY(0);}
+.card h3{color:#00e0ff;margin-bottom:15px;}
+
+/* TESTIMONIAL */
+.testimonial{
+max-width:700px;margin:auto;font-style:italic;
 }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: auto;
-}
+/* FORM */
+form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+input,textarea{padding:12px;border-radius:8px;border:none;}
+textarea{resize:none;height:120px;}
 
-.service-card {
-    background: #1f2937;
-    padding: 30px;
-    border-radius: 12px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
-}
+/* MAP */
+iframe{width:100%;height:350px;border:none;border-radius:12px;}
 
-.service-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* FOOTER */
+footer{background:#0f172a;padding:20px;text-align:center;font-size:14px;opacity:0.7;}
 
-.service-card h3 {
-    color: #00e0ff;
-    margin-bottom: 15px;
-}
+/* MOBILE MENU */
+.menu-toggle{display:none;font-size:28px;cursor:pointer;}
 
-/* CONTACT FORM */
-form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input, textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-}
-
-textarea {
-    resize: none;
-    height: 120px;
-}
-
-footer {
-    background: #0f172a;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
+@media(max-width:768px){
+nav ul{display:none;flex-direction:column;background:#0a0f1c;position:absolute;top:60px;right:0;width:200px;padding:20px;}
+nav ul.show{display:flex;}
+.menu-toggle{display:block;}
+.hero h1{font-size:40px;}
 }
 </style>
 </head>
-
 <body>
 
 <nav>
-    <h2>Carspiration</h2>
-    <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Book Now</a></li>
-    </ul>
+<div class="logo">Carspiration</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul id="nav-links">
+<li><a href="#services">Services</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Book</a></li>
+</ul>
 </nav>
 
 <section class="hero">
-    <h1>Advanced <span>ADAS Calibration</span></h1>
-    <p>Precision Alignment for Cameras, Radar, and Modern Vehicle Safety Systems.</p>
-    <a href="#contact" class="btn">Schedule Service</a>
+<h1>Advanced <span>ADAS Calibration</span></h1>
+<p>Precision Alignment for Cameras, Radar & Modern Vehicle Safety Systems.</p>
+<a href="#contact" class="btn">Schedule Service</a>
 </section>
 
-<section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Camera Calibration</h3>
-            <p>Lane departure, forward collision, traffic sign recognition.</p>
-        </div>
-        <div class="service-card">
-            <h3>Radar Calibration</h3>
-            <p>Blind spot monitoring and adaptive cruise systems.</p>
-        </div>
-        <div class="service-card">
-            <h3>Post-Collision Reset</h3>
-            <p>Complete recalibration after accidents or windshield replacement.</p>
-        </div>
-        <div class="service-card">
-            <h3>Diagnostic Scanning</h3>
-            <p>Full ADAS system verification and module scanning.</p>
-        </div>
-    </div>
+<section id="services" class="dark">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><h3>Camera Calibration</h3><p>Lane & collision system alignment.</p></div>
+<div class="card"><h3>Radar Calibration</h3><p>Blind spot & adaptive cruise recalibration.</p></div>
+<div class="card"><h3>Post-Collision Reset</h3><p>Full ADAS restoration after impact.</p></div>
+<div class="card"><h3>Diagnostics</h3><p>Complete system verification scan.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="grid">
+<div class="card"><h3>Single System</h3><p>$250+</p></div>
+<div class="card"><h3>Full Calibration</h3><p>$450+</p></div>
+<div class="card"><h3>Diagnostic Scan</h3><p>$120</p></div>
+</div>
+</section>
+
+<section class="dark">
+<h2>Client Testimonials</h2>
+<div class="testimonial">
+<p>"Professional, accurate, and fast. Carspiration restored our vehicle safety system perfectly."</p>
+</div>
 </section>
 
 <section id="contact">
-    <h2>Book Your Calibration</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="vehicle" placeholder="Vehicle Make & Model" required>
-        <textarea name="message" placeholder="Describe the service needed"></textarea>
-        <button type="submit" class="btn">Submit Request</button>
-    </form>
+<h2>Book Your Calibration</h2>
+<form action="https://formspree.io/f/yourformid" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="text" name="vehicle" placeholder="Vehicle Make & Model" required>
+<textarea name="message" placeholder="Describe the service needed"></textarea>
+<button type="submit" class="btn">Submit Request</button>
+</form>
+</section>
+
+<section class="dark">
+<h2>Our Location</h2>
+<iframe src="https://www.google.com/maps?q=National%20City,%20CA&output=embed"></iframe>
 </section>
 
 <footer>
-    © 2026 Carspiration ADAS Calibration | Safety Meets Precision
+© 2026 Carspiration ADAS Calibration | Safety Meets Precision
 </footer>
 
 <script>
-const cards = document.querySelectorAll('.service-card');
-
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const position = card.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        if(position < screenPosition) {
-            card.classList.add('visible');
-        }
-    });
+const cards=document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+cards.forEach(card=>{
+if(card.getBoundingClientRect().top<window.innerHeight/1.2){
+card.classList.add('visible');
+}
 });
+});
+
+function toggleMenu(){
+document.getElementById("nav-links").classList.toggle("show");
+}
 </script>
 
 </body>
